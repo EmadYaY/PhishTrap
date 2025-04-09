@@ -30,9 +30,9 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
    - Gains access to the local user's system via `\\tsclient`
    - Plants a **payload in the Startup folder** for persistence or further execution
 
+
 ---
-
-
+> This Tools Now Just Like POC You need Custom for self use for example after everything ok delete reg key and escape from kiosk-style and show somethings...You KNOW🤣
 
 ---
 
@@ -53,3 +53,26 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 ---
 
 
+
+<h2 id="next-update">🔱 Next Update</h2>
+<ul>
+<li>add more template and shell access</li>
+</ul>
+<h2 id="contact">📧 Contact</h2>
+<p >
+<a href="https://t.me/amajax"><img title="Telegram" src="https://img.shields.io/badge/Telegram-black?style=for-the-badge&logo=Telegram"></a>
+<a href="https://www.youtube.com/channel/UC0-QcOXgzRgSfcE3zerwu9w/?sub_confirmation=1"><img title="Youtube" src="https://img.shields.io/badge/Youtube-red?style=for-the-badge&logo=Youtube"></a>
+<a href="https://www.instagram.com/sectoolfa"><img title="Instagram" src="https://img.shields.io/badge/Instagram-white?style=for-the-badge&logo=Instagram"></a>
+
+## ⚠️ Legal & Ethical Disclaimer
+
+🚨 This tool is developed strictly for educational and authorized security testing purposes only.
+
+🔬 It is intended to help cybersecurity professionals, researchers, and enthusiasts understand post-exploitation, red teaming, and detection techniques in lab or controlled environments.
+
+❌ Do NOT use this tool on any system or network without explicit permission. Unauthorized use may be illegal and unethical.
+
+🛡 The author takes no responsibility for any misuse or damage caused by this project.
+
+---
+> Always hack responsibly. 💻🔐
