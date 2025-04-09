@@ -42,6 +42,8 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 ## ▶️ Demo Video & Wiki
 
 - **Video Demo:** [YouTube Link Here](#) *(Coming soon)*
+- [Watch demo video](res/demo-video.mp4)
+
 - setup:
   - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon` for run first process and first time
   - `use shell:startup` and `shell:commo` for deploy malware and re check fake security page every time user connect for recheck. 
