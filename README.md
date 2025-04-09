@@ -33,6 +33,8 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 
 ---
 > This Tools Now Just Like POC You need Custom for self use for example after everything ok delete reg key and escape from kiosk-style and show somethings...You KNOW🤣
+
+---
 > This Tools Use edge open in kiosk mode and full screen open html tempalte generate by powershell dynamic for check with combine key user cant escape or exit🔒
 
 ---
