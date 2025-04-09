@@ -17,7 +17,7 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 
 ## ⚙️ How It Works
 
-1. **User connects** to a remote server using the provided `.rdp` file.
+1. **User connects** to a remote server using the provided `.rdp` file. or `server_ip`
 2. A **custom server-side application** launches and forces the Windows environment into a **kiosk-style lockdown**:
    - Disables all key combinations: `Alt+Tab`, `Ctrl+Alt+Del`, `Win key`, etc.
    - Prevents user from interacting with the real desktop.
@@ -39,7 +39,7 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 ## ▶️ Demo Video & Wiki
 
 - **Video Demo:** [YouTube Link Here](#) *(Coming soon)*
-- **Setup Guide:** [Go to Wiki](#)
+
 
 ---
 
