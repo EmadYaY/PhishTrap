@@ -64,6 +64,8 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 <h2 id="next-update">🔱 Next Update</h2>
 <ul>
 <li>add more template and shell access</li>
+<li>Display a fake update message: Show a fake system update notification, asking the user to stay connected for a specified period (e.g., 20 minutes). This message aims to deceive the user into remaining connected longer.</li>
+<li>Transfer victim’s files: During this time, silently transfer files from the target system to the attacker’s server. If the user disconnects or exits the session prematurely, the timer will reset, forcing the user to stay connected longer for the attack to complete.</li>
 </ul>
 <h2 id="contact">📧 Contact</h2>
 <p >
