@@ -557,10 +557,9 @@ $htmlContent += @'
 '@
 
 # Define the path where the HTML file will be saved
-$filePath = "./check.html"
+$filePath = "c:/ui/check.html"
 # Save the HTML content to the file
 $htmlContent | Out-File -FilePath $filePath -Encoding UTF8
-sleep 1
 
 # Open the HTML file in the default browser
 Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" -ArgumentList "--kiosk", "--edge-kiosk-type=fullscreen", "file:///C:/ui/check.html", "--disable-features=Translate,msWebOOUI,msPdfOOUI"
