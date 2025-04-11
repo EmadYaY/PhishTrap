@@ -42,7 +42,7 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 ## ▶️ Demo Video & Wiki
 
 
-- **Video Setup:** [![Watch the video]](https://www.youtube.com/watch?v=dahuidcxS2U)
+- **Video Setup:** [Watch the video](https://www.youtube.com/watch?v=dahuidcxS2U)
 - [Watch Demo video](res/demo-video.mp4)
 - setup:
   - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon` for run first process and first time
