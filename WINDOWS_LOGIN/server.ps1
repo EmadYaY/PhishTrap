@@ -71,7 +71,7 @@ while ($listener.IsListening) {
 
             $password = [System.Net.WebUtility]::UrlDecode($formData) -replace "^password=", ""
 
-            if (Test-Credential -CredentialUserName $($env:USERNAME) -PlainPassword $password) {
+            if (Test-Credential -CredentialUserName -PlainPassword $password) {
                 $buffer = [System.Text.Encoding]::UTF8.GetBytes("OK")
             } else {
                 $buffer = [System.Text.Encoding]::UTF8.GetBytes("FAIL")
