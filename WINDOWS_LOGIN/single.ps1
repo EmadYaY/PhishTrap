@@ -3482,10 +3482,7 @@ while ($listener.IsListening) {
             }
         }
 
-        "GET /login.jpg" {
-            $response.ContentType = "image/jpeg"
-            $buffer = [System.IO.File]::ReadAllBytes("res/login.jpg")
-        }
+        
 
         "POST /run" {
             $reader = New-Object System.IO.StreamReader($request.InputStream)
