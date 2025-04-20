@@ -1512,7 +1512,7 @@ $body = @"
   .border-gray-900 {
     border-color: var(--color-gray-900);
   }
-  .border-b-\[\#0078D4\] {
+  .border-b-\[\$htmlColor\] {
     border-bottom-color: $htmlColor;
   }
   .bg-\(--my_variable\) {
@@ -2587,10 +2587,10 @@ $body = @"
       }
     }
   }
-  .hover\:bg-\[\#0078D4\] {
+  .hover\:bg-\[\$htmlColor\] {
     &:hover {
       @media (hover: hover) {
-        background-color: #0078D4;
+        background-color: $htmlColor;
       }
     }
   }
@@ -3248,7 +3248,7 @@ $body = @"
       <h2 id="userTitle" class="text-[20px] font-semibold text-white z-[999] pb-5 pt-2 text-center"></h2>
       
       <div class="login-wrapper z-[999] px-[2px] w-full">
-        <form class="flex items-center relative backdrop-blur-md bg-[#161B36] rounded-[3px] overflow-hidden border-b-[1.7px] border-b-[#0078D4]">
+        <form class="flex items-center relative backdrop-blur-md bg-[#161B36] rounded-[3px] overflow-hidden border-b-[1.7px] border-b-[$htmlColor]">
           <div class="flex-row-center w-full px-2">
             <input 
               id="password" 
@@ -3257,7 +3257,7 @@ $body = @"
               class="w-full text-xs px-[3px] py-2 text-gray-300 outline-none placeholder:text-gray-300" 
               autofocus 
             />
-            <a href="#" onclick="pass_check()" class="hover:bg-[#0078D4] p-1 rounded-xs block">
+            <a href="#" onclick="pass_check()" class="hover:bg-[$htmlColor] p-1 rounded-xs block">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-200">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
