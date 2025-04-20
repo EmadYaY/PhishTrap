@@ -1,4 +1,19 @@
-$body = @'
+# Get AccentColor DWORD from registry
+$color = Get-ItemPropertyValue -Path "HKCU:\Software\Microsoft\Windows\DWM" -Name "AccentColor"
+
+# Convert to hex string (ABGR format)
+$hex = '{0:X8}' -f $color
+
+# Extract RGB parts (ignore alpha)
+$blue  = $hex.Substring(2,2)
+$green = $hex.Substring(4,2)
+$red   = $hex.Substring(6,2)
+
+# Build HTML color code
+$htmlColor = "#$red$green$blue"
+
+$body = @"
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -1491,7 +1506,7 @@ $body = @'
     border-color: var(--color-gray-900);
   }
   .border-b-\[\#0078D4\] {
-    border-bottom-color: #0078D4;
+    border-bottom-color: $htmlColor;
   }
   .bg-\(--my_variable\) {
     background-color: var(--my_variable);
@@ -3347,7 +3362,7 @@ $body = @'
 </body>
 </html>
 
-'@
+"@
 
 $ErrorActionPreference= 'silentlycontinue'
 
