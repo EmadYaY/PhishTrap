@@ -1,11 +1,54 @@
-# ⚔️ Weaponized Windows Server via RDP  
-> A creative red team technique using pure PowerShell and social engineering over RDP.
-
 ![PowerShell](https://img.shields.io/badge/Built%20With-PowerShell-blue?logo=powershell)
 ![Platform](https://img.shields.io/badge/Platform-Windows_Server-lightgrey?logo=windows)
 ![License](https://img.shields.io/badge/Use%20at%20your%20own%20risk-critical?logo=skull)
 
 ---
+
+
+# 🧠 PhishTrap
+
+> Weaponized Windows Phishing Toolkit – Social Engineering with Pure PowerShell  
+> ⚔️ Red Team tools for capturing credentials & planting payloads using native Windows features.
+
+---
+
+## 🎯 Project Objective
+
+**PhishTrap** is a Red Team-oriented toolkit designed to **simulate phishing scenarios using legitimate Windows components**. Instead of using exploits or malware, it leverages trusted UI elements and built-in OS behaviors to **stealthily trick users into revealing credentials or enabling access vectors**.
+
+### 👾 Key Features:
+- Fully written in **PowerShell**
+- No need for external tools or exploits
+- Stealthy and highly customizable
+- Built for **Red Team ops**, **Adversary Emulation**, and **Security Labs**
+
+---
+
+## 📦 Included Tools
+
+### 1. 🪟 `Fake Windows Login` (Credential Harvester)
+- Displays a **realistic Windows login screen**
+- Captures the password typed by the user
+- No LSASS dump or suspicious behavior
+- Perfect for **post-exploitation** or **internal phishing**
+
+📁 `WINDOWS_LOGIN/single.ps1`
+
+---
+
+### 2. 🖥️ `RDP Phishing Kiosk` (Initial Access + Payload Drop)
+- Weaponized `.rdp` file and a Windows Server setup
+- Locks user inside a **kiosk-style session**
+- Tricks them into enabling **Drive Sharing**
+- When enabled, drops payload via `\\tsclient` to their local system
+
+📁 `RDP_TRAP/`
+
+🔐 Includes:
+- Key disabling (Alt+Tab, Ctrl+Alt+Del)
+- Fake security prompt in fullscreen Edge
+- Auto-drop into Startup folder
+- Registry-based persistence & cleanup logic
 
 ## 🧠 Idea Behind the Tool
 
@@ -13,31 +56,21 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 
 > **Goal:** Trick users into enabling drive sharing through RDP and silently plant a payload for post-exploitation.
 
----
-
-## ⚙️ How It Works
-
-1. **User connects** to a remote server using the provided `.rdp` file. or `server_ip`
-2. A **custom server-side application** launches and forces the Windows environment into a **kiosk-style lockdown**:
-   - Disables all key combinations: `Alt+Tab`, `Ctrl+Alt+Del`, `Win key`, etc.
-   - Prevents user from interacting with the real desktop.
-
-3. A **fake security prompt** is displayed:
-   - If **Drive Sharing** is already enabled, the tool moves to the next stage.
-   - If **not**, the user is shown a warning suggesting a "security feature" must be enabled, tricking them into turning on sharing.
-
-4. When sharing is enabled, the tool:
-   - Gains access to the local user's system via `\\tsclient`
-   - Plants a **payload in the Startup folder** for persistence or further execution
 
 
----
-> This Tools Now Just Like POC You need Custom for self use for example after everything ok delete reg key and escape from kiosk-style and show somethings...You KNOW🤣
 
----
-> This Tools Use edge open in kiosk mode and full screen open html tempalte generate by powershell dynamic for check with combine key user cant escape or exit🔒
 
----
+## 🛠️ How It Works
+
+| Step | Action |
+|------|--------|
+| 1️⃣ | User opens an `.rdp` file or connects to server |
+| 2️⃣ | A Kiosk session launches, disabling all key combos |
+| 3️⃣ | User sees a **fake security popup** asking to enable drive sharing |
+| 4️⃣ | If sharing is enabled, tool gains access to local system via `\\tsclient` |
+| 5️⃣ | Payload is copied to `Startup` for future execution |
+| 6️⃣ | Session exits Kiosk mode and restores real desktop |
+
 
 ## ▶️ Demo Video & Wiki
 
@@ -49,27 +82,17 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
   - `use shell:startup` and `shell:commo` for deploy malware and re check fake security page every time user connect for recheck. 
   - `use sharpkeys tools` and `reg file` for disable keys and remove.
 
----
-
-## 🛠️ Built With
-
-- Pure **PowerShell** scripting (no external dependencies)
-- Optional support for:
-  - `PS2EXE` for compiling to `.exe`
-  - `NirCmd`, `Resource Hacker`, or `Bat To Exe` for behavior masking
-
----
 
 
 
-<h2 id="next-update">🔱 Next Update</h2>
-<ul>
-<li>add more template and shell access</li>
+## 💡 Usage Ideas
 
-<li>Display a fake update message: Show a fake system update notification, asking the user to stay connected for a specified period (e.g., 20 minutes). This message aims to deceive the user into remaining connected longer.</li>
+- Combine with **C2 frameworks** for post-execution control  
+- Deploy in **lab simulations** to train Blue Teams  
+- Bypass AV by avoiding typical malware behavior  
+- Use in **Red Team assessments** with stealth-first mindset  
 
-<li>Transfer victim’s files: During this time, silently transfer files from the target system to the attacker’s server. If the user disconnects or exits the session prematurely, the timer will reset, forcing the user to stay connected longer for the attack to complete.</li>
-</ul>
+
 <h2 id="contact">📧 Contact</h2>
 <p >
 <a href="https://t.me/amajax"><img title="Telegram" src="https://img.shields.io/badge/Telegram-black?style=for-the-badge&logo=Telegram"></a>
@@ -88,3 +111,4 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 
 ---
 > Always hack responsibly. 💻🔐
+
