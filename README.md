@@ -1,3 +1,4 @@
+
 ![PowerShell](https://img.shields.io/badge/Built%20With-PowerShell-blue?logo=powershell)
 ![Platform](https://img.shields.io/badge/Platform-Windows_Server-lightgrey?logo=windows)
 ![License](https://img.shields.io/badge/Use%20at%20your%20own%20risk-critical?logo=skull)
@@ -84,6 +85,16 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 
 
 
+### 3. 🔒 `Credential Export via Social Lock Screen` (CREDWIZ_LOCKSCREEN)
+
+- Displays a fake fullscreen security window instructing the user to press `Ctrl + Alt + Delete`
+- User is told to enter a **"Secure Access Code"** (e.g. `1234`)
+- Meanwhile, the script silently launches `credwiz.exe` and uses the same code (`1234`) to generate a `.crd` backup file
+- Since the password was attacker-defined, the resulting credential export can be easily decrypted later
+
+📁 `CREDWIZ_LOCKSCREEN/`
+
+🧠 **This technique tricks the user into generating a credential export encrypted with a known password – without ever asking for their real system password.**
 
 ## 💡 Usage Ideas
 
