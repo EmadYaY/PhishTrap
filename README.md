@@ -34,7 +34,7 @@
 - No LSASS dump or suspicious behavior
 - Perfect for **post-exploitation** or **internal phishing**
 
-📁 `WINDOWS_LOGIN/single.ps1`
+📁 `WINDOWS_LOGIN/`
 
 ---
 
@@ -44,7 +44,7 @@
 - Tricks them into enabling **Drive Sharing**
 - When enabled, drops payload via `\\tsclient` to their local system
 
-📁 `RDP_TRAP/`
+📁 `RDP/`
 
 🔐 Includes:
 - Key disabling (Alt+Tab, Ctrl+Alt+Del)
