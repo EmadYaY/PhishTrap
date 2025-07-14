@@ -63,7 +63,7 @@ $labelTokenValue = New-Object System.Windows.Forms.Label -Property @{
 }
 $form.Controls.Add($labelTokenValue)
 
-# محاسبه و تنظیم موقعیت کنترل‌ها قبل از نمایش فرم
+
 $screen = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
 
 $labelTitle.Left = ($screen.Width - $labelTitle.Width) / 2
@@ -89,8 +89,7 @@ $form.Add_KeyDown({
 
 $form.Show()
 
-# --------------------------------------
-# بخش دوم: کلاس KeyboardSimulator و تابع Run-CredWizAutomation
+
 
 Add-Type @"
 using System;
