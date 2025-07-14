@@ -1,4 +1,5 @@
 
+
 ![PowerShell](https://img.shields.io/badge/Built%20With-PowerShell-blue?logo=powershell)
 ![Platform](https://img.shields.io/badge/Platform-Windows_Server-lightgrey?logo=windows)
 ![License](https://img.shields.io/badge/Use%20at%20your%20own%20risk-critical?logo=skull)
@@ -95,6 +96,24 @@ This tool simulates a **real-world initial access scenario** via a weaponized Wi
 📁 `CREDWIZ_LOCKSCREEN/`
 
 🧠 **This technique tricks the user into generating a credential export encrypted with a known password – without ever asking for their real system password.**
+
+### 4. 🌀 Fake Windows Update Screen (User Delay + Distraction Trap)
+
+Displays a realistic, full-screen **"Windows Update in Progress"** UI  
+Blocks user interaction and disables key combos (Alt+Tab, Ctrl+Alt+Del)  
+Used as a **diversion layer** during post-exploitation or payload deployment
+
+📁 `WINDOWS_UPDATE/`
+
+🧠 **Usage Scenario**
+
+The fake update screen is used to:
+
+-   Keep the user distracted while payloads are being deployed in the background
+    
+-   Prevent user input or investigation during sensitive operations
+    
+-   Give the illusion of a system update, increasing trust and delay
 
 ## 💡 Usage Ideas
 
